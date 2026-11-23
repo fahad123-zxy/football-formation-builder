@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Formation Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <span class="brand-mark"><span>11</span></span>
+        <div>
+          <p class="eyebrow">Tactical board</p>
+          <h1>Formation Builder</h1>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-button" id="resetBtn" title="Reset formation" aria-label="Reset formation">↻</button>
+        <button class="primary-button" id="saveBtn"><span>↓</span> Save image</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="panel">
+        <div class="panel-section">
+          <label class="field-label" for="teamName">Team name</label>
+          <input id="teamName" value="Blue Tigers" maxlength="24" />
+        </div>
+
+        <div class="panel-section">
+          <span class="field-label">Formation</span>
+          <div class="formation-grid" id="formationGrid">
+            <button data-formation="4-3-3">4-3-3</button>
+            <button data-formation="4-4-2">4-4-2</button>
+            <button data-formation="3-5-2">3-5-2</button>
+            <button data-formation="4-2-3-1">4-2-3-1</button>
+            <button data-formation="3-4-3">3-4-3</button>
+            <button data-formation="5-3-2">5-3-2</button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <span class="field-label">Kit color</span>
+          <div class="swatches" id="swatches">
+            <button class="swatch active" data-color="#2855d9" style="--swatch:#2855d9" aria-label="Blue"></button>
+            <button class="swatch" data-color="#e84b45" style="--swatch:#e84b45" aria-label="Red"></button>
+            <button class="swatch" data-color="#16a56f" style="--swatch:#16a56f" aria-label="Green"></button>
+            <button class="swatch" data-color="#f2b84b" style="--swatch:#f2b84b" aria-label="Yellow"></button>
+            <button class="swatch" data-color="#8c62d8" style="--swatch:#8c62d8" aria-label="Purple"></button>
+            <button class="swatch" data-color="#252a38" style="--swatch:#252a38" aria-label="Dark"></button>
+          </div>
+        </div>
+
+        <div class="panel-section player-list-section">
+          <div class="section-heading">
+            <span class="field-label">Squad</span>
+            <button id="clearPlayers">Clear</button>
+          </div>
+          <div class="player-list" id="playerList"></div>
+        </div>
+      </aside>
+
+      <section class="pitch-wrap">
+        <div class="pitch-header">
+          <div>
+            <p class="pitch-team" id="pitchTeam">Blue Tigers</p>
+            <p class="pitch-formation" id="pitchFormation">4-3-3 Formation</p>
+          </div>
+          <div class="legend"><span></span> Drag players to adjust</div>
+        </div>
+        <div class="pitch" id="pitch">
+          <div class="pitch-lines">
+            <div class="halfway"></div>
+            <div class="center-circle"></div>
+            <div class="center-dot"></div>
+            <div class="box top-box"></div>
+            <div class="box bottom-box"></div>
+            <div class="goal top-goal"></div>
+            <div class="goal bottom-goal"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
