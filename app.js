@@ -24,7 +24,7 @@ let kitColor = "#2855d9";
 let currentFormation = "4-3-3";
 
 const pitch = document.getElementById("pitch");
-const playerList = document.getElementByElementById("playerList");
+const playerList = document.getElementById("playerList");
 
 function renderPlayers(names = defaultNames) {
   pitch.querySelectorAll(".player").forEach(player => player.remove());
@@ -53,7 +53,7 @@ function renderPlayers(names = defaultNames) {
 
 function makeDraggable(player) {
   player.addEventListener("pointerdown", event => {
-    event.preventEventDefault();
+    event.preventDefault();
     player.setPointerCapture(event.pointerId);
 
     const move = moveEvent => {
